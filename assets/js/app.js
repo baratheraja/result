@@ -10,8 +10,19 @@ app.config(function($routeProvider, $locationProvider) {
 
 
 app.controller('mainController', function($rootScope, $scope,$cookies,$http){
+$scope.names="";
+$http.get("http://www.w3schools.com/website/Customers_JSON.php")
+    .success(function(response) {$scope.names = response; })
+     .error(function () {
+      console.log('error')
+    });
+     console.log($scope.names);
+     
 $rootScope.count=0;
 $rootScope.max_count=6;
+ 
+$rootScope.events=["Contraptions","","","",""];
+
  $rootScope.winners1=[
  {
     eve:"1",
@@ -62,7 +73,7 @@ $rootScope.max_count=6;
             {name:"36",id:"k!sdsasr",college:"College of Engineering Guindy"},
             {name:"37",id:"k!sdf5fg7",college:"College of Engineering Guindy"},
             {name:"34",id:"k!sdf23",college:"College of Engineering Guindy"},
-            {name:"35",id:"k!sdf57",college:"College of Engineering Guindy"}
+ 
           ]
 
           ]
@@ -189,15 +200,15 @@ app.controller('Updater', ['$scope',function($scope){
 
 }]);
 
-app.controller('r1Controller', function($scope,$rootScope){
+app.controller('r1Controller', function($scope,$rootScope,$http){
   if($rootScope.disp==1)
   { 
-    console.log("for 1"); 
-    $scope.eventname=$rootScope.winners1[0].eve;
-    $scope.details=$rootScope.winners1[0];
+    
+    $http.get("http://www.w3schools.com/website/Customers_JSON.php")
+    .success(function(response) {$scope.details = response;});
+     $scope.eventname=$rootScope.events[0];    
     $rootScope.count++;
-    console.log($scope.eventname);
-    console.log($scope.details);
+    
   }
 
 
@@ -206,13 +217,14 @@ app.controller('r1Controller', function($scope,$rootScope){
     
     
     $rootScope.count=($rootScope.count+1)%$rootScope.max_count;
-    $scope.eventname=$rootScope.winners1[ $scope.count].eve;
-    $scope.details=$rootScope.winners1[ $scope.count];
-    
-  
-    console.log($scope.eventname);
-    //console.log($scope.details);
-    console.log($scope.details);
+   
+$http.get("http://www.w3schools.com/website/Customers_JSON.php")
+    .success(function(response) {$scope.details = response;});
+
+        
+  $scope.eventname=$rootScope.events[0];
+   
+    //console.log("http://techteam.kurukshetra.org.in/result_check.php?event_name=Contraptions");
   };
 
 });
@@ -222,49 +234,37 @@ app.controller('r2Controller', function($scope,$rootScope){
 
   if($rootScope.disp==1)
   { 
-    console.log("for 1"); 
     $scope.eventname=$rootScope.winners1[1].eve;
     $scope.details=$rootScope.winners1[1];
     $rootScope.count++;
-    console.log($scope.eventname);
-    console.log($scope.details);
   }
 
 
   $scope.chooseNext=function(){
-    $scope.$apply(function () {
       // body...
     $rootScope.count=($rootScope.count+1)%$rootScope.max_count;
     $scope.eventname=$rootScope.winners1[$scope.count].eve;
     $scope.details=$rootScope.winners1[$scope.count];
     
-    });
-    console.log($scope.eventname);
-    //console.log($scope.details);
-    console.log($rootScope.count);
-  };
+    };
+  
 
 });
 app.controller('r3Controller', function($scope,$rootScope){
 
   if($rootScope.disp==1)
   { 
-    console.log("for 1"); 
     $scope.eventname=$rootScope.winners1[2].eve;
     $scope.details=$rootScope.winners1[2];
-    console.log($scope.eventname)
-    console.log($scope.details);
   }
 
 
   $scope.chooseNext=function(){
-    $scope.$apply(function () {
-      // body...
     $rootScope.count=($rootScope.count+1)%$rootScope.max_count;
     $scope.eventname=$rootScope.winners1[$scope.count].eve;
     $scope.details=$rootScope.winners1[$scope.count];
     
-    });
+  
 
   };
 
@@ -274,7 +274,6 @@ app.controller('r4Controller', function($scope,$rootScope){
   if($rootScope.disp==1)
   { 
     
-    console.log("for 1"); 
     $scope.eventname=$rootScope.winners1[3].eve;
     $scope.details=$rootScope.winners1[3];
     $rootScope.count++;
@@ -282,13 +281,12 @@ app.controller('r4Controller', function($scope,$rootScope){
   }
 
   $scope.chooseNext=function(){
-    $scope.$apply(function () {
       // body...
     $rootScope.count=($rootScope.count+1)%$rootScope.max_count;
     $scope.eventname=$rootScope.winners1[ $scope.count].eve;
     $scope.details=$rootScope.winners1[ $scope.count];
     
-    });
+    
   };
 
 });
@@ -297,7 +295,6 @@ app.controller('r5Controller', function($scope,$rootScope){
 
   if($rootScope.disp==1)
   { 
-    console.log("for 1"); 
     $scope.eventname=$rootScope.winners1[4].eve;
     $scope.details=$rootScope.winners1[4];
     $rootScope.count++;
@@ -306,20 +303,17 @@ app.controller('r5Controller', function($scope,$rootScope){
 
   
   $scope.chooseNext=function(){
-    $scope.$apply(function () {
-      // body...
     $rootScope.count=($rootScope.count+1)%$rootScope.max_count;
     $scope.eventname=$rootScope.winners1[ $scope.count].eve;
     $scope.details=$rootScope.winners1[ $scope.count];
     
-    });};
+    };
 
 });
 app.controller('r6Controller', function($scope,$rootScope){
 
   if($rootScope.disp==1)
   { 
-    console.log("for 1"); 
     $scope.eventname=$rootScope.winners1[5].eve;
     $scope.details=$rootScope.winners1[5];
     $rootScope.count++;
@@ -327,16 +321,11 @@ app.controller('r6Controller', function($scope,$rootScope){
 
   
   $scope.chooseNext=function(){
-    $scope.$apply(function () {
-      // body...
     $rootScope.count=($rootScope.count+1)%$rootScope.max_count;
     $scope.eventname=$rootScope.winners1[ $scope.count].eve;
     $scope.details=$rootScope.winners1[ $scope.count];
     
-    });
-    console.log($scope.eventname);
-    console.log($rootScope.winners1[0][2]);
-    console.log($rootScope.count);
-  };
+    
+   };
 
 });
