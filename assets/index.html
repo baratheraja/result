@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+
+    <!-- required -->
+    <link rel="stylesheet" href="bower_components/sape-ng-flexslider/styles.css">
+    <!-- endrequired -->
+
+    <!-- custom:optional -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- endcustom -->
+
+  </head>
+  <body ng-app="sapeslider">
+
+    <div id="wrapper">
+      <h2>Standard</h2>
+
+      <sape-flexslider>
+        <sape-slide>
+            <img alt="" ng-src="http://placehold.it/600x350">
+        </sape-slide>
+        <sape-slide>
+            <img alt="" ng-src="http://placehold.it/600x350">
+        </sape-slide>
+        <sape-slide>
+            <img alt="" ng-src="http://placehold.it/600x350">
+        </sape-slide>
+      </sape-flexslider>
+
+
+      <hr />
+      <h2>Attributes (options)</h2>
+      <sape-flexslider item-width="100" min-items="4" direction-nav="false">
+        <sape-slide>
+            <img alt="" ng-src="http://placehold.it/100x100">
+        </sape-slide>
+        <sape-slide>
+            <img alt="" ng-src="http://placehold.it/100x100">
+        </sape-slide>
+        <sape-slide>
+            <img alt="" ng-src="http://placehold.it/100x100">
+        </sape-slide>
+        <sape-slide>
+            <img alt="" ng-src="http://placehold.it/100x100">
+        </sape-slide>
+        <sape-slide>
+            <img alt="" ng-src="http://placehold.it/100x100">
+        </sape-slide>
+        <sape-slide>
+            <img alt="" ng-src="http://placehold.it/100x100">
+        </sape-slide>
+      </sape-flexslider>
+
+
+    </div>
+
+
+
+
+  </body>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/sape-ng-flexslider/directive.js"></script>
+
+  <script>
+    angular.module('sapeslider', ['sape-flexslider']);
+  </script>
+  </html>

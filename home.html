@@ -1,0 +1,156 @@
+<div class="scrollable">  
+  <div class="scrollable-content">
+    <div id="content">
+      <div class="row">
+        <!-- UPDATES -->
+        <div class="col-md-3" style="padding-left: 2%;">
+          <h3 style="text-align: center;" >Updates</h3>
+            <flex-slider slide="s in updates" direction="vertical" animation="fade" control-nav="false" direction-nav="false">
+              <li>
+                  {{s}};
+              </li>
+              </flex-slider>
+            <flex-slider slide="s in updates" start-at="1" direction="vertical" animation="fade" control-nav="false" direction-nav="false">
+              <li>
+                  {{s}};
+              </li>
+              </flex-slider>
+            
+            <flex-slider slide="s in updates" start-at="2" direction="vertical" control-nav="false" direction-nav="false">
+              <li>
+                  {{s}};
+              </li>
+            </flex-slider>
+            <flex-slider slide="s in updates" start-at="3" direction="vertical" animation="fade" control-nav="false" direction-nav="false">
+              <li>
+                  {{s}};
+              </li>
+            </flex-slider>
+          </div>
+        <!--  Display Result -->
+        <div class="col-md-9">
+          <h3 style="text-align: center;" >Event Results</h3>
+          
+          <div class="col-md-3">
+          <div class="row" ng-controller="r1Controller">
+          
+            <div class="panel panel-primary">
+               <div class="panel-heading">
+                  <h2 class="panel-title"><b>{{eventname}}</b></h2><h5>{{details.position}}</h5>
+               </div>
+               <div class="panel-body">
+              <flex-slider id="r1" slide="s in details.data"  end="chooseNext()" direction="vertical" animation="fade" control-nav="false" direction-nav="false">
+                    <li>
+                      <div ng-repeat="x in s track by $index">
+                        <b>{{x.id}} {{x.name}}</b><br><font size="2" color="brown"><i>{{x.college}}</i> </font>
+                      </div>
+                    </li>
+            </flex-slider>
+          </div>
+          </div>
+
+          </div>
+          <div class="row" ng-controller="r2Controller">
+          
+            <div class="panel panel-primary">
+               <div class="panel-heading">
+                  <h2 class="panel-title"><b>{{eventname}}</b></h2><h5>{{details.position}}</h5>
+               </div>
+               <div class="panel-body">
+              <flex-slider id="r2" slide="s in details.data track by $index"  end="chooseNext()" direction="vertical" animation="fade" control-nav="false" direction-nav="false">
+                <li>
+                      <div ng-repeat="x in s">
+                        <b>{{x.id}} {{x.name}}</b><br><font size="2" color="brown"><i>{{x.college}}</i> </font>
+                      </div>
+                    </li>
+            </flex-slider>
+          </div>
+          </div>
+          </div>
+        </div>
+        <div class="col-md-1">
+        </div>
+          <div class="col-md-3">
+          <div class="row" ng-controller="r3Controller">
+          
+            <div class="panel panel-primary">
+               <div class="panel-heading">
+                  <h2 class="panel-title"><b>{{eventname}}</b></h2><h5>{{details.position}}</h5>
+               </div>
+               <div class="panel-body">
+              <flex-slider slide="s in details.data track by $index"  end="chooseNext()" direction="vertical" animation="fade" control-nav="false" direction-nav="false">
+                    <li>
+                      <div ng-repeat="x in s ">
+                        <b>{{x.id}} {{x.name}}</b><br><font size="2" color="brown"><i>{{x.college}}</i> </font>
+                      </div>
+                    </li>
+            </flex-slider>
+          </div>
+          </div>
+
+          </div>
+          <div class="row" ng-controller="r4Controller">
+          
+            <div class="panel panel-primary">
+               <div class="panel-heading">
+                  <h2 class="panel-title"><b>{{eventname}}</b></h2><h5>{{details.position}}</h5>
+               </div>
+               <div class="panel-body">
+              <flex-slider slide="s in details.data track by $index"  end="chooseNext()" direction="vertical" animation="fade" control-nav="false" direction-nav="false">
+                <li>
+                      <div ng-repeat="x in s ">
+                        <b>{{x.id}} {{x.name}}</b><br><font size="2" color="brown"><i>{{x.college}}</i> </font>
+                      </div>
+                    </li>
+            </flex-slider>
+          </div>
+          </div>
+          </div>
+        </div>
+        <div class="col-md-1">
+        
+        </div>
+          
+          <div class="col-md-3">
+          <div class="row" ng-controller="r5Controller">
+          
+            <div class="panel panel-primary">
+               <div class="panel-heading">
+                  <h2 class="panel-title"><b>{{eventname}}</b></h2><h5>{{details.position}}</h5>
+               </div>
+               <div class="panel-body">
+              <flex-slider slide="s in details.data track by $index"  end="chooseNext()" direction="vertical" animation="fade" control-nav="false" direction-nav="false">
+                    <li>
+                      <div ng-repeat="x in s">
+                        <b>{{x.id}} {{x.name}}</b><br><font size="2" color="brown"><i>{{x.college}}</i> </font>
+                      </div>
+                    </li>
+            </flex-slider>
+          </div>
+          </div>
+
+          </div>
+          <div class="row" ng-controller="r6Controller">
+          
+            <div class="panel panel-primary">
+               <div class="panel-heading">
+                  <h2 class="panel-title"><b>{{eventname}}</b></h2><h5>{{details.position}}</h5>
+               </div>
+               <div class="panel-body">
+              <flex-slider slide="s in details.data track by $index"  end="chooseNext()" direction="vertical" animation="fade" control-nav="false" direction-nav="false">
+                <li>
+                      <div ng-repeat="x in s">
+                        <b>{{x.id}} {{x.name}}</b><br><font size="2" color="brown"><i>{{x.college}}</i> </font>
+                      </div>
+                    </li>
+            </flex-slider>
+          </div>
+          </div>
+          </div>
+        </div>
+
+
+        </div>
+      </div>
+  </div>
+</div>

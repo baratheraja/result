@@ -1,0 +1,21 @@
+{
+  "name": "demo",
+  "version": "0.0.3",
+  "homepage": "https://github.com/carlosacabrera/sape-ng-flexslider",
+  "authors": [
+    "Carlos A. Cabrera <ccabrera@sapient.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.19",
+    "jquery": "*"
+  }
+}
